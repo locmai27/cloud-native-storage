@@ -1,0 +1,28 @@
+/* frontend/src/App.css */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-header {
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+  .app {
+      padding: 10px;
+  }
+}
