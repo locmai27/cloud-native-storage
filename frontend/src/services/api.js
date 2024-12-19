@@ -14,6 +14,7 @@ export const uploadFile = async (file, onProgress) => {
     // Upload to S3 using pre-signed URL
     await axios.put(response.data.uploadUrl, file, {
         headers: { 'Content-Type': file.type },
+        // this is a built-in provided by axios to track the upload progress
         onUploadProgress: (progressEvent) => {
             const percentage = (progressEvent.loaded * 100) / progressEvent.total;
             onProgress(Math.round(percentage));

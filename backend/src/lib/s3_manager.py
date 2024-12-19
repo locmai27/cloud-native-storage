@@ -13,6 +13,11 @@ class S3Manager:
                              file_name: str, 
                              file_size: int, 
                              content_type: str) -> Dict:
+        """
+        Generate a presigned URL for uploading a file to S3
+        """
+        if file_size > 100 * 1024 * 1024:  # 100 MB limit
+            raise ValueError("File size exceeds the 100 MB limit.")
         try:
             url = self.s3_client.generate_presigned_url(
                 'put_object',
@@ -28,6 +33,9 @@ class S3Manager:
             raise Exception(f"Failed to generate presigned URL: {str(e)}")
 
     def get_object_size(self, bucket: str, key: str) -> Optional[int]:
+        """
+        Get the size of an object in S3
+        """
         try:
             response = self.s3_client.head_object(Bucket=bucket, Key=key)
             return response['ContentLength']
