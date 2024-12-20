@@ -61,7 +61,22 @@ resource "aws_iam_role_policy" "lambda_policy" {
           "cloudwatch:GetMetricData"
         ]
         Resource = "*"
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+        Resource = [
+          "arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:/aws/lambda/${var.project_name}-${var.environment}-upload-handler:*"
+        ]
       }
     ]
   })
 }
+
+# Add these data sources at the top of your iam.tf file
+data "aws_region" "current" {}
+data "aws_caller_identity" "current" {}

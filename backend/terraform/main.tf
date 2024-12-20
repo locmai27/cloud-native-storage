@@ -12,7 +12,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "${var.base_bucket_name}-${var.environment}-terraform-state"
+    bucket = "elastoc-media-storage-dev-terraform-state"
     key    = "elastic-storage/terraform.tfstate"
     region = "us-east-1"
   }
