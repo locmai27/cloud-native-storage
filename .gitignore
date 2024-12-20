@@ -1,0 +1,16 @@
+# dependencies
+frontend/node_modules
+venv
+
+#build
+frontend/build
+frontend/dist
+backend/build
+backend/dist
+backend/*.zip
+backend/.aws/credentials
+backend/terraform/.terraform
+backend/terraform/.terraform.lock.hcl  
+backend/terraform/terraform.tfstate
+backend/terraform/terraform.tfstate.backup
+backend/terraform/terraform.tfplan
