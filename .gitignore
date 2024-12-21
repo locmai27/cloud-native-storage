@@ -16,3 +16,7 @@ backend/terraform/terraform.tfstate.backup
 backend/terraform/terraform.tfplan
 backend/terraform/tfplan
 backend/terraform/terraform.tfvars
+
+#cache
+__pycache__
+.coverage

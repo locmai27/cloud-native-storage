@@ -19,8 +19,7 @@ class DynamoManager:
         # Check if the file already exists
         existing_item = self.get_file_location(file_id)
         if existing_item:
-            raise ValueError(f"File ID {file_id} already exists in the database
-                             with bucket {existing_item['bucket']}.")
+            raise ValueError(f"File ID {file_id} already exists in the database with bucket {existing_item['bucket']}.")
         try:
             self.table.put_item(
                 Item={

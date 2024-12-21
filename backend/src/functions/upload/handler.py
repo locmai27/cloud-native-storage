@@ -4,9 +4,9 @@ import uuid
 from typing import Dict
 import os
 
-from lib.s3_manager import S3Manager
-from lib.dynamo_manager import DynamoManager
-from utils.logger import get_logger
+from src.lib.s3_manager import S3Manager
+from src.lib.dynamo_manager import DynamoManager
+from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
