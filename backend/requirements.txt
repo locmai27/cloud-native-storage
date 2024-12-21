@@ -1,3 +1,5 @@
-# requirements-terraform.txt
 python-terraform==0.10.1
 boto3==1.26.137
+moto
+pytest==6.2.4
+pytest-cov
