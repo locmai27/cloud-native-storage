@@ -25,10 +25,7 @@ source build/venv/bin/activate
 pip install -r requirements.txt
 
 # Create Lambda layer
-cd ./build/venv/lib/python3.12/site-packages
-zip -r ../../../../lambda_layer.zip .
-cd ../../../../../
-
+zip -r lambda_layer.zip ./build/venv/lib/python3.12/site-packages
 
 # Package Lambda functions
 zip -r upload_function.zip ./src/functions/upload/
