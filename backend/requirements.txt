@@ -1,5 +1,5 @@
-python-terraform==0.10.1
-boto3==1.26.137
-moto
-pytest==6.2.4
-pytest-cov
+Flask==2.2.2
+Werkzeug==2.2.2
+boto3==1.26.0
+flask-cors==3.0.10
+python-jose==3.3.0

@@ -5,17 +5,15 @@ venv
 #build
 frontend/build
 frontend/dist
+frontend/node_modules
+infrastructure/
+!infrastructure/main.tf
 backend/build
-backend/dist
-backend/*.zip
-backend/.aws/credentials
-backend/terraform/.terraform
-backend/terraform/.terraform.lock.hcl  
-backend/terraform/terraform.tfstate
-backend/terraform/terraform.tfstate.backup
-backend/terraform/terraform.tfplan
-backend/terraform/tfplan
-backend/terraform/terraform.tfvars
+backend/.aws/
+backend/__pycache__
+backend/venv
+backend/.env
+
 
 #cache
 __pycache__

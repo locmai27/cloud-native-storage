@@ -1,10 +1,16 @@
-**Upload flow:
+**Upload Flow**
 
-1. Presigned URL request: Frontend -> Generate Pre-signed URL
-2. Direct upload: Frontend -> S3 (using pre-signed URL)
-3. Distribute to the CloudFront storage (for caching): Frontend -> Generate metadata -> Generate CloudFront URL
+1. Presigned URL Request: 
+   - The frontend requests a pre-signed URL from the backend.
 
-Visual flow:
+2. Direct Upload: 
+   - The frontend uploads the file directly to S3 using the pre-signed URL.
+
+3. Distribute to CloudFront Storage (for caching):
+   - The frontend (or backend) updates metadata, then generates a CloudFront URL for the file.
+
+**Visual Flow**
+
 User
   ↓
 Select File
@@ -21,7 +27,6 @@ Notify Backend of Completion
   ↓
 Receive CloudFront URL
 
+**Upload Information**
 
-**Upload information:
-
-Storage currently consist of 1 bucket --> default bucket name
+- Storage currently consists of 1 bucket, which uses the default bucket name.
